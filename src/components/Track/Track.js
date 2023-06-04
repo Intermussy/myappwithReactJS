@@ -1,7 +1,7 @@
 import React from "react";
 import "./Track.css";
 
-class SearchBar extends React.Component{
+class Track extends React.Component{
     constructor(props){
         super(props);
 
@@ -26,16 +26,33 @@ class SearchBar extends React.Component{
                 <button className="Track-action" onClick={this.removeTrack}> - </button>
             };
         }
+        return{
+            <button className="Track-action" onClick={this.addTrack}> + </button>
+        };
     }
 
     render(){
         return{
-            <div className="SearchBar">
-            <><input placeholder="Enter song, album or artist" onChange={this.handleTermChange} onKeyUp={this.handleEnter} />
-            <button className="SearchButton" onClick={this.search}>SEARCH</button>
+            <div className="Track">
+           <div className="Track-information">
+           <h3>{this.props.track.name</h3>
+           <p>
+            {this.props.track.artist} | {this.props.track.album}
+           </p>
+           <iframe>
+            src={"https://open.spotify.com/embed/track/" + this.props.track.id}
+            width="300"
+            height="80"
+            frameborder="0"
+            allowtransparancy="true"
+            allow="encrypted-media"
+            title="preview"
+            />
             </div>
+          {this.renderAction()}
+        </div>
         };
     }
 }
 
-export default SearchBar;
+export default Track;

@@ -4,7 +4,7 @@ import './App.css';
 
 import Playlist from "../Playlist/Playlist";
 import SearchBar from ".//SearchBar/SearchBar";
-import SearchResult from "../SearchResults/SearchResults";
+import SearchResults from "../SearchResults/SearchResults";
 import Spotify from "../ultl/Spotify";
 
 class App extends React.Component {
@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props);
 
     this.state={
-      SearchResult: [],
+      SearchResults: [],
       PlaylistName: "New Playlist",
       playlistTracks: []
     }
