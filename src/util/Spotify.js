@@ -65,14 +65,14 @@ const Spotify={
             .then(response => response.json())
             .then(jsonResponse => {
                 const playlistId=jsonResponse.id;
-                return fetch{
+                return fetch(
                     "https://api.spotify.com/v1/users/${userid}/playlists/${playlistId}/tracks",
                     {
                         headers: headers,
                         method : "POST",
                         body: JSON.stringify({urls: trackUrls})
                     }
-                };
+                );
             });
         });
     }

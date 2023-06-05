@@ -4,10 +4,10 @@ import Track from "../Track/Track";
 
 class TrackList extends React.Component {
     render(){
-        return{
+        return(
             <div className="TrackList">
             {this.props.tracks.map(track => {
-                return{
+                return(
                     <Track
                     track={track}
                     key={track.id}
@@ -15,10 +15,10 @@ class TrackList extends React.Component {
                     isRemoval={this.props.isRemoval}
                     onRemove={this.props.onRemove}
                     />
-                };
+                );
             })}
             </div>
-        };
+        );
     }
 }
 
